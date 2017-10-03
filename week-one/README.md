@@ -2,23 +2,24 @@
 
 Here are the instructions to follow for week one:
 
-1.	Download and install [MAMP](https://www.mamp.info/en/) - the free MAMP download comes bundled with MAMP Pro trial version but you don't have to use, or pay for this (unless you want to at a later date). If you have a Windows laptop, try [XAMPP](https://www.apachefriends.org/index.html)
+1.	Download and install [MAMP](https://www.mamp.info/en/) - the free MAMP download comes bundled with MAMP Pro trial version but you don't have to use, or pay for this (unless you want to at a later date). If you have a Windows laptop, try [XAMPP](https://www.apachefriends.org/index.html) the process will be similar.
 2.	Open MAMP.
-3.	Hit Start Servers > http://localhost:8888/MAMP/?language=English should show a page that says “MAMP has been installed successfully”.
+3.	Hit *Start Servers* and it should load [http://localhost:8888/MAMP/?language=English](http://localhost:8888/MAMP/?language=English) automatically and show a page that says “MAMP has been installed successfully”
 4.	Go to *Preferences > Web Server > Document Server* and change this path to where you want to keep your files for this project (you might want to create a new folder for your project before you do this).
 5.	Go to [https://html5up.net/strata](https://html5up.net/strata) and download the Strava theme.
 6.	Copy the contents of the *html5up-strata* folder into your project folder.
-7.	Go to http://localhost:8888/ in your favourite browser.
-8.	You should see the strata html pages.
-9.	Open up your project folder or `index.html` in your favourite code-editor
+7.	Go to [http://localhost:8888/](http://localhost:8888/) in your favourite browser.
+8.	You should see the strata html pages rendered in your browser.
+9.	Open up your project folder or `index.html` in your favourite code-editor ([Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/3), or [Notepad ++](https://notepad-plus-plus.org/) are also good).
 10.	Rename the file to `index.php`
 11.	Refresh the browser – in should find `index.php` instead of `index.html` – ie. No change!
 12.	We’re going to use `echo` to customise the title of the website. Remove the text in between the title tags and replace with:
 
-    `<title><?php echo “My website”; ?></title>`
+    `<title><?php echo 'My website'; ?></title>`
 
 13.	Refresh the browser… you should see the title change in the tab.
 14.	Amazing… we’re coding PHP, it’s not that hard is it?
+    The PHP parser on the server will interpret whatever you put inside the `<?php ?>` delimiters before it sends it to the browser.
     Let’s declare some variables… delete the commented HTML under the `<!DOCTYPE HTML>` tag and replace it with something like:
 
           <?php
@@ -33,13 +34,13 @@ Here are the instructions to follow for week one:
 
 with:
 
-        <h1><strong>I am <?php echo $myName; ?> :</strong> <?php echo $myJobTitle; ?>.</h1>
+        <h1><strong><?php echo $myName; ?></strong><br /><?php echo $myJobTitle; ?></h1>
 
-16.	We could also replace our name in the title.  We need to use a full-stop to concatenate (join together) the string and our echo function:
+16.	We could also replace our name in the title.  We need to use a full-stop to *concatenate* (join together) the *string* and our `echo` statement:
     `<title><?php echo $myName . "'s website"; ?></title>`
 17.	Let’s get dynamic.  Ever seen a website where the copyright symbol shows an old date?  It's not great because it creates uncertainty in our minds as to whether the information on the rest of the website is up-to-date.  Let’s change the Copyright to always have the current year:
-a.	Add `$date = Date(Y);` to our variables at the top of the page.
-b.	Replace:
+  a.	Add `$date = Date(Y);` to our variables at the top of the page.
+  b.	Replace:
 
         <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 with:
@@ -106,7 +107,7 @@ a.	First of all change the html so that we `echo` out each line:
           echo "</article>";
         ?>
 
-b.	Then we can add the `foreach` loop:
+b.	Then we can add our `for` loop:
 
         for ($i = 0; $i < count($myArray); $i++ ) {
           $fileNumber = $i + 1;
@@ -122,9 +123,11 @@ Now we’re cooking… 🍳
 ## Next week:
 We will replace our *two-dimensional array* with a *database table*.
 
-##Futher reading:
-[String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes.
-[Echo](http://php.net/manual/en/function.echo.php) - echo, the language construct docs.
-[Echo, Print and Printf](https://stackoverflow.com/questions/1647322/whats-the-difference-between-echo-print-and-print-r-in-php) - the difference between echo, print and print-r explained.
-[Date](http://nl3.php.net/manual/en/function.date.php)  - the date function docs
-[For](http://nl1.php.net/manual/en/control-structures.for.php) - The `for` control structure docs
+## Further reading:
+* [String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between *double* and *single quotes*.
+* [Echo](http://php.net/manual/en/function.echo.php) - `echo`, the language construct docs.
+* [Echo, Print and Printf](https://stackoverflow.com/questions/1647322/whats-the-difference-between-echo-print-and-print-r-in-php) - the difference between `echo`, `print` and `print-r` explained.
+* [Date](http://nl3.php.net/manual/en/function.date.php)  - the `date` function docs
+* [Operators](http://thephpbasics.com/tutorial-10-operators/) - tutorials on operators
+* [For](http://nl1.php.net/manual/en/control-structures.for.php) - The `for` control structure docs
+* [For video tutorial](http://thephpbasics.com/tutorial-17-for-loop/)
