@@ -40,10 +40,12 @@ with:
 17.	Let’s get dynamic.  Ever seen a website where the copyright symbol shows an old date?  It's not great because it creates uncertainty in our minds as to whether the information on the rest of the website is up-to-date.  Let’s change the Copyright to always have the current year:
 a.	Add `$date = Date(Y);` to our variables at the top of the page.
 b.	Replace:
-    `<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>`
+
+        `<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>`
 with:
-        <li>&copy; <?php echo $date; ?></li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+
+        `<li>&copy; <?php echo $date; ?></li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>`
 
 18.	For our next trick we are going to need 6 images: create two different sixes for each: (740px x 343px, and a thumbnail version 370px x 217px).  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
 19.	We can keep all this information in an *array* like follows (add this under your variables):
