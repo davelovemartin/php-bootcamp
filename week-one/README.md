@@ -39,7 +39,9 @@ with:
 16.	We could also replace our name in the title.  We need to use a full-stop to *concatenate* (join together) the *string* and our `echo` statement:
     `<title><?php echo $myName . "'s website"; ?></title>`
 17.	Let’s get dynamic.  Ever seen a website where the copyright symbol shows an old date?  It's not great because it creates uncertainty in our minds as to whether the information on the rest of the website is up-to-date.  Let’s change the Copyright to always have the current year:
+
   a.	Add `$date = Date(Y);` to our variables at the top of the page.
+
   b.	Replace:
 
         <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
