@@ -13,11 +13,9 @@ Here are the instructions to follow for week one:
 9.	Open up your project folder or index.html in your favourite code-editor
 10.	Rename the file to index.php
 11.	Refresh the browser – in should find index.php instead of index.html – ie. No change!
-12.	We’re going to use *echo* to customise the title of the website. Remove the text in between the title tags and replace with:
+12.	We’re going to use `echo` to customise the title of the website. Remove the text in between the title tags and replace with:
 
-    <title>
-        <?php echo “My website”; ?>
-    </title>
+    `<title><?php echo “My website”; ?></title>`
 
 13.	Refresh the browser… you should see the title change in the tab.
 14.	Amazing… we’re doing PHP, it’s not that hard is it?  Let’s declare some variables… delete the commented HTML under the <!DOCTYPE HTML> tag and replace it with something like:
