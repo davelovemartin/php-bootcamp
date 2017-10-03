@@ -3,6 +3,7 @@
 	// declare your variables
   $myName = "Dave Martin";
   $myJobTitle = "UWE Alumni and Indie Web Developer";
+	$date = Date(Y);
 ?>
 <html>
 	<head>
@@ -448,7 +449,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; <?php echo $date; ?></li>
+    				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>

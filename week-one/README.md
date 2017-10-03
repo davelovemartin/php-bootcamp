@@ -50,11 +50,12 @@ with:
         <li>&copy; <?php echo $date; ?></li>
         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 
-18.	For our next trick we are going to need 6 images: create two different sixes for each: (740px x 343px, and a thumbnail version 370px x 217px).  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
-19.	We can keep all this information in an *array* like follows (add this under your variables):
+18.	For our next trick we are going to need 6 images: create two different sizes for each: (a large one - any size, and a thumbnail version `370px x 217px`).  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
+19.	We can keep all this information in an *associative array*. Each value we want to store, has an associated key so we can find it. So for the first row, enter this under your variables:
 
         $myArray = [title => "First title", description => "This is a description of the first image"];
 
+    The array values are kept in what we call Key Value Pairs
 20.	Let’s replace this html:
 
           <article class="6u 12u$(xsmall) work-item">
@@ -130,6 +131,7 @@ We will replace our *two-dimensional array* with a *database table*.
 * [Echo](http://php.net/manual/en/function.echo.php) - `echo`, the language construct docs.
 * [Echo, Print and Printf](https://stackoverflow.com/questions/1647322/whats-the-difference-between-echo-print-and-print-r-in-php) - the difference between `echo`, `print` and `print-r` explained.
 * [Date](http://nl3.php.net/manual/en/function.date.php)  - the `date` function docs
+* [Arrays](https://www.w3schools.com/PhP/php_arrays.asp) - *Indexed*, *Associated* and *Multidimensional* arrays.
 * [Operators](http://thephpbasics.com/tutorial-10-operators/) - tutorials on operators
 * [For](http://nl1.php.net/manual/en/control-structures.for.php) - The `for` control structure docs
 * [For video tutorial](http://thephpbasics.com/tutorial-17-for-loop/)
