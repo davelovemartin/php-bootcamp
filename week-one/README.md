@@ -20,15 +20,20 @@ Here are the instructions to follow for week one:
 13.	Refresh the browser… you should see the title change in the tab.
 14.	Amazing… we’re coding PHP, it’s not that hard is it?
     Let’s declare some variables… delete the commented HTML under the `<!DOCTYPE HTML>` tag and replace it with something like:
-    `<?php`
-	      `$myName = "Dave Martin";`
-        `$myJobTitle = "UWE Alumni and Indie Web Developer";`
-    `?>`
+
+          <?php
+            $myName = "Dave Martin";
+            $myJobTitle = "UWE Alumni and Indie Web Developer";
+          ?>
+
     Notice how we put a semi-colon at the end of each PHP statement - watch out for this, if you leave out a semi-colon, it can cause errors in your code and your page not to run.
 15. We can use these variables over-and-over again in our script.  It’s good to keep them together in the same place so we can easily refer to them.  Let’s replace:
-    `<h1><strong>I am Strata</strong>, a super simple<br /> responsive site template freebie<br /> crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>`
+
+        <h1><strong>I am Strata</strong>, a super simple<br /> responsive site template freebie<br /> crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+
 with:
-    `<h1><strong>I am <?php echo $myName; ?> :</strong> <?php echo $myJobTitle; ?>.</h1>`
+
+        <h1><strong>I am <?php echo $myName; ?> :</strong> <?php echo $myJobTitle; ?>.</h1>
 
 16.	We could also replace our name in the title.  We need to use a full-stop to concatenate (join together) the string and our echo function:
     `<title><?php echo $myName . "'s website"; ?></title>`
@@ -37,10 +42,14 @@ a.	Add `$date = Date(Y);` to our variables at the top of the page.
 b.	Replace:
     `<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>`
 with:
-    `<li>&copy; <?php echo $date; ?></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>`
+        <li>&copy; <?php echo $date; ?></li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+
 18.	For our next trick we are going to need 6 images: create two different sixes for each: (740px x 343px, and a thumbnail version 370px x 217px).  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
 19.	We can keep all this information in an *array* like follows (add this under your variables):
-    `$myArray = [title => "First title", description => "This is a description of the first image"];`
+
+        $myArray = [title => "First title", description => "This is a description of the first image"];
+
 20.	Let’s replace this html:
 
           <article class="6u 12u$(xsmall) work-item">
@@ -112,4 +121,8 @@ Now we’re cooking… 🍳
 We will replace our *two-dimensional array* with a *database table*.
 
 ##Futher reading:
-[String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes
+[String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes.
+[Echo](http://php.net/manual/en/function.echo.php) - echo, the language construct docs.
+[Echo, Print and Printf](https://stackoverflow.com/questions/1647322/whats-the-difference-between-echo-print-and-print-r-in-php) - the difference between echo, print and print-r explained.
+[Date](http://nl3.php.net/manual/en/function.date.php)  - the date function docs
+[For](http://nl1.php.net/manual/en/control-structures.for.php) - The `for` control structure docs
