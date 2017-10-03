@@ -52,63 +52,60 @@ with:
           </article>
 
 21.	…with the data we’re holding in the array:
-    `<article class="6u 12u$(xsmall) work-item">`
 
-      `<a href="images/fulls/01.jpg" class="image fit thumb">`
-
-        `<img src="images/thumbs/01.jpg" alt="" />`
-
-      `</a>`
-
-      `<h3><?php echo $myArray[title]; ?></h3>`
-
-      `<p><?php echo $myArray[description]; ?></p>`
-
-    `</article>`
+        <article class="6u 12u$(xsmall) work-item">
+          <a href="images/fulls/01.jpg" class="image fit thumb">
+            <img src="images/thumbs/01.jpg" alt="" />
+          </a>
+          <h3><?php echo $myArray[title]; ?></h3>
+          <p><?php echo $myArray[description]; ?></p>
+        </article>
 
 22.	You can think of the keys (title and description) as column headings in a table.  Our array is a one row table.  To make a multi-row table we need to have an array of arrays:
 
-    `$myArray = [
-      [title => "First title", description => "This is a description of the first image"],
+        $myArray = [
+              [title => "First title", description => "This is a description of the first image"],
+              [title => "Second title", description => "This is a description of the second image"],
+              [title => "Third title", description => "This is a description of the third image"],
+              [title => "Fourth title", description => "This is a description of the fourth image"],
+              [title => "Fifth title", description => "This is a description of the fifth image"],
+              [title => "Sixth title", description => "This is a description of the sixth image"]
+            ];
 
-      [title => "Second title", description => "This is a description of the second image"],
-
-      [title => "Third title", description => "This is a description of the third image"],
-
-      [title => "Fourth title", description => "This is a description of the fourth image"],
-
-      [title => "Fifth title", description => "This is a description of the fifth image"],
-
-      [title => "Sixth title", description => "This is a description of the sixth image"]
-    ];`
 23.	We’ll now have to change our html to reflect this:
-    `<article class="6u 12u$(xsmall) work-item">
-      <a href="images/fulls/01.jpg" class="image fit thumb">
-        <img src="images/thumbs/01.jpg" alt="" />
-      </a>
-      <h3><?php echo $myArray[0][title]; ?></h3>
-      <p><?php echo $myArray[0][description]; ?></p>
-    </article>`
-24.	Now repeat for the next 5… No wait!  DON’T REPEAT YOURSELF!!!  We can use a loop through our array like this…
-a.	First of all change the html so that we echo out each line:
-    `<?php
-      echo "<article class='6u 12u$(xsmall) work-item'>";
-      echo "  <a href='images/fulls/01.jpg' class='image fit thumb'><img src='images/thumbs/01.jpg' alt='' /></a>";
-      echo "	<h3>" . $myArray[0][title] . "</h3>";
-      echo "	<p>" . $myArray[0][description] . "</p>";
-      echo "</article>";
-    ?>`
-b.	Then we can add the foreach loop:
-    `for ($i = 0; $i < count($myArray); $i++ ) {
-      $fileNumber = $i + 1;
-      echo "<article class='6u 12u$(xsmall) work-item'>";
-      echo "	<a href='images/fulls/0". $fileNumber .".jpg' class='image fit thumb'><img src='images/thumbs/0". $fileNumber .".jpg' alt='' /></a>";
-      echo "	<h3>" . $myArray[$i][title] . "</h3>";
-      echo "	<p>" . $myArray[$i][description] . "</p>";
-      echo "</article>";
-		  }
-		}`
+        <article class="6u 12u$(xsmall) work-item">
+          <a href="images/fulls/01.jpg" class="image fit thumb">
+            <img src="images/thumbs/01.jpg" alt="" />
+          </a>
+          <h3><?php echo $myArray[0][title]; ?></h3>
+          <p><?php echo $myArray[0][description]; ?></p>
+        </article>
+24.	Now repeat for the next 5… No wait!  DON’T REPEAT YOURSELF!!!  We can use a *loop* to output our *array* like this…
+a.	First of all change the html so that we `echo` out each line:
+
+        <?php
+          echo "<article class='6u 12u$(xsmall) work-item'>";
+          echo "  <a href='images/fulls/01.jpg' class='image fit thumb'>";
+          echo "  <img src='images/thumbs/01.jpg' alt='' />";
+          echo "  </a>";
+          echo "	<h3>" . $myArray[0][title] . "</h3>";
+          echo "	<p>" . $myArray[0][description] . "</p>";
+          echo "</article>";
+        ?>
+
+b.	Then we can add the `foreach` loop:
+
+        for ($i = 0; $i < count($myArray); $i++ ) {
+          $fileNumber = $i + 1;
+          echo "<article class='6u 12u$(xsmall) work-item'>";
+          echo "	<a href='images/fulls/0". $fileNumber .".jpg' class='image fit thumb'><img src='images/thumbs/0". $fileNumber .".jpg' alt='' /></a>";
+          echo "	<h3>" . $myArray[$i][title] . "</h3>";
+          echo "	<p>" . $myArray[$i][description] . "</p>";
+          echo "</article>";
+        }
 
 Now we’re cooking…
 
 Next week:  We will replace our “array of arrays” with a database table in MySQL
+
+Futher reading: [String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes
