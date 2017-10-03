@@ -43,13 +43,13 @@ with:
     `$myArray = [title => "First title", description => "This is a description of the first image"];`
 20.	Let’s replace this html:
 
-          `<article class="6u 12u$(xsmall) work-item">
+          <article class="6u 12u$(xsmall) work-item">
             <a href="images/fulls/01.jpg" class="image fit thumb">
               <img src="images/thumbs/01.jpg" alt="" />
             </a>
             <h3>Magna sed consequat tempus</h3>
             <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-          </article>`
+          </article>
 
 21.	…with the data we’re holding in the array:
     `<article class="6u 12u$(xsmall) work-item">`
