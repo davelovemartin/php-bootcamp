@@ -51,7 +51,7 @@ with:
             <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
           </article>
 
-21.	…with the data we’re holding in the array:
+21.	…with the data we’re holding in the *array*:
 
         <article class="6u 12u$(xsmall) work-item">
           <a href="images/fulls/01.jpg" class="image fit thumb">
@@ -61,7 +61,7 @@ with:
           <p><?php echo $myArray[description]; ?></p>
         </article>
 
-22.	You can think of the keys (title and description) as column headings in a table.  Our array is a one row table.  To make a multi-row table we need to have an array of arrays:
+22.	You can think of the keys (title and description) as column headings in a table.  Our *array* is a one row table.  To make a multi-row table we need to have an *array of arrays* AKA a *two-dimensional array*:
 
         $myArray = [
               [title => "First title", description => "This is a description of the first image"],
@@ -109,7 +109,7 @@ b.	Then we can add the `foreach` loop:
 Now we’re cooking… 🍳
 
 ## Next week:
-We will replace our “array of arrays” with a database table in MySQL
+We will replace our *two-dimensional array* with a *database table*.
 
 ##Futher reading:
 [String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes
