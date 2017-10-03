@@ -42,21 +42,36 @@ with:
 19.	We can keep all this information in an *array* like follows (add this under your variables):
     `$myArray = [title => "First title", description => "This is a description of the first image"];`
 20.	Let’s replace this html:
+
     `<article class="6u 12u$(xsmall) work-item">`
+
       `<a href="images/fulls/01.jpg" class="image fit thumb">`
+
         `<img src="images/thumbs/01.jpg" alt="" />`
+
       `</a>`
+
       `<h3>Magna sed consequat tempus</h3>`
+
       `<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>`
+
     `</article>`
+    
 21.	…with the data we’re holding in the array:
     `<article class="6u 12u$(xsmall) work-item">`
+
       `<a href="images/fulls/01.jpg" class="image fit thumb">`
+
         `<img src="images/thumbs/01.jpg" alt="" />`
+
       `</a>`
+
       `<h3><?php echo $myArray[title]; ?></h3>`
+
       `<p><?php echo $myArray[description]; ?></p>`
+
     `</article>`
+
 22.	You can think of the keys (title and description) as column headings in a table.  Our array is a one row table.  To make a multi-row table we need to have an array of arrays:
 
     `$myArray = [
@@ -69,7 +84,7 @@ with:
       [title => "Fourth title", description => "This is a description of the fourth image"],
 
       [title => "Fifth title", description => "This is a description of the fifth image"],
-      
+
       [title => "Sixth title", description => "This is a description of the sixth image"]
     ];`
 23.	We’ll now have to change our html to reflect this:
