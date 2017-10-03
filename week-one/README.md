@@ -50,12 +50,12 @@ with:
         <li>&copy; <?php echo $date; ?></li>
         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 
-18.	For our next trick we are going to need 6 images: create two different sizes for each: (a large one - any size, and a thumbnail version `370px x 217px`).  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
+18.	For our next trick we are going to need 6 images: create two different sizes for each: (a large one - any size, and a thumbnail version `370px x 217px`). Name them 01.jpg, 02.jpg as per the template files.  For each image, think of a *title*, think of a *description*. (I’m just going to use the ones in the theme).
 19.	We can keep all this information in an *associative array*. Each value we want to store, has an associated key so we can find it. So for the first row, enter this under your variables:
 
         $myArray = [title => "First title", description => "This is a description of the first image"];
 
-    The array values are kept in what we call Key Value Pairs
+    The *array* values are stored in what we call *Key Value Pairs*.
 20.	Let’s replace this html:
 
           <article class="6u 12u$(xsmall) work-item">
@@ -76,7 +76,7 @@ with:
           <p><?php echo $myArray[description]; ?></p>
         </article>
 
-22.	You can think of the keys (title and description) as column headings in a table.  Our *array* is a one row table.  To make a multi-row table we need to have an *array of arrays* AKA a *two-dimensional array*:
+22.	You can think of the *keys* (title and description) as column headings in a table.  Our *array* is a one row table.  To make a multi-row table we need to have an *array of arrays* AKA a *two-dimensional array*:
 
         $myArray = [
               [title => "First title", description => "This is a description of the first image"],
@@ -97,7 +97,8 @@ with:
           <p><?php echo $myArray[0][description]; ?></p>
         </article>
 
-24.	Now repeat for the next 5… No wait!  DON’T REPEAT YOURSELF!!!  We can use a *loop* to output our *array* like this…
+24.	Now repeat for the next 5… No wait! DON’T REPEAT YOURSELF! We can use a *loop* to output our *array* (and keep our code [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)) like this…
+
 a.	First of all change the html so that we `echo` out each line:
 
         <?php
@@ -121,17 +122,25 @@ b.	Then we can add our `for` loop:
           echo "</article>";
         }
 
+c. Delete the other article sections - we don't need them now they're being added dynamically.
+
 Now we’re cooking… 🍳
+
+## Ideas for expansion
+* Show your profile image with your [Gravatar.com avatar](https://en.gravatar.com/site/implement/images/php/).
+* Get the form to work [PHP Forms Tutorial](https://www.lynda.com/PHP-tutorials/Build-forms/587674/623963-4.html)!?
+* Edit the CSS and the background image with something more personal?
 
 ## Next week:
 We will replace our *two-dimensional array* with a *database table*.
 
 ## Further reading:
 * [String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between *double* and *single quotes*.
-* [Echo](http://php.net/manual/en/function.echo.php) - `echo`, the language construct docs.
+* [Echo](http://php.net/manual/en/function.echo.php) - `echo` language construct docs.
 * [Echo, Print and Printf](https://stackoverflow.com/questions/1647322/whats-the-difference-between-echo-print-and-print-r-in-php) - the difference between `echo`, `print` and `print-r` explained.
-* [Date](http://nl3.php.net/manual/en/function.date.php)  - the `date` function docs
+* [Date](http://nl3.php.net/manual/en/function.date.php)  - `date` function docs
 * [Arrays](https://www.w3schools.com/PhP/php_arrays.asp) - *Indexed*, *Associated* and *Multidimensional* arrays.
-* [Operators](http://thephpbasics.com/tutorial-10-operators/) - tutorials on operators
-* [For](http://nl1.php.net/manual/en/control-structures.for.php) - The `for` control structure docs
+* [Key Software Principles](https://code.tutsplus.com/tutorials/3-key-software-principles-you-must-understand--net-25161) - *DRY*, *KISS* and *YAGNI*.
+* [Operators](http://thephpbasics.com/tutorial-10-operators/) - tutorials on *operators*.
+* [For](http://nl1.php.net/manual/en/control-structures.for.php) - `for` control structure docs
 * [For video tutorial](http://thephpbasics.com/tutorial-17-for-loop/)

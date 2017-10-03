@@ -3,7 +3,19 @@
 	// declare your variables
   $myName = "Dave Martin";
   $myJobTitle = "UWE Alumni and Indie Web Developer";
+	$email = "justanotherdavemartin@gmail.com";
+	$size = 100;
+	$grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "&s=" . $size;
 	$date = Date(Y);
+	// $myArray = [title => "First title", description => "This is a description of the first image"];
+	$myArray = [
+      [title => "First title", description => "This is a description of the first image"],
+      [title => "Second title", description => "This is a description of the second image"],
+      [title => "Third title", description => "This is a description of the third image"],
+      [title => "Fourth title", description => "This is a description of the fourth image"],
+      [title => "Fifth title", description => "This is a description of the fifth image"],
+      [title => "Sixth title", description => "This is a description of the sixth image"]
+    ];
 ?>
 <html>
 	<head>
@@ -19,7 +31,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<a href="#" class="image avatar"><img src="<?php echo $grav_url; ?>" alt="" /></a>
 					<h1><strong><?php echo $myName; ?></strong><br /><?php echo $myJobTitle; ?></h1>
 				</div>
 			</header>
@@ -43,36 +55,16 @@
 					<section id="two">
 						<h2>Recent Work</h2>
 						<div class="row">
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
+							<?php
+							for ($i = 0; $i < count($myArray); $i++ ) {
+									$fileNumber = $i + 1;
+									echo "<article class='6u 12u$(xsmall) work-item'>";
+									echo "	<a href='images/fulls/0". $fileNumber .".jpg' class='image fit thumb'><img src='images/thumbs/0". $fileNumber .".jpg' alt='' /></a>";
+									echo "	<h3>" . $myArray[$i][title] . "</h3>";
+									echo "	<p>" . $myArray[$i][description] . "</p>";
+									echo "</article>";
+								}
+			        ?>
 						</div>
 						<ul class="actions">
 							<li><a href="#" class="button">Full Portfolio</a></li>
