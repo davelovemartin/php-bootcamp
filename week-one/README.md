@@ -73,6 +73,7 @@ with:
             ];
 
 23.	We’ll now have to change our html to reflect this:
+
         <article class="6u 12u$(xsmall) work-item">
           <a href="images/fulls/01.jpg" class="image fit thumb">
             <img src="images/thumbs/01.jpg" alt="" />
@@ -80,6 +81,7 @@ with:
           <h3><?php echo $myArray[0][title]; ?></h3>
           <p><?php echo $myArray[0][description]; ?></p>
         </article>
+
 24.	Now repeat for the next 5… No wait!  DON’T REPEAT YOURSELF!!!  We can use a *loop* to output our *array* like this…
 a.	First of all change the html so that we `echo` out each line:
 
@@ -104,8 +106,10 @@ b.	Then we can add the `foreach` loop:
           echo "</article>";
         }
 
-Now we’re cooking…
+Now we’re cooking… 🍳
 
-Next week:  We will replace our “array of arrays” with a database table in MySQL
+## Next week:
+We will replace our “array of arrays” with a database table in MySQL
 
-Futher reading: [String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes
+##Futher reading:
+[String Types](http://www.phptherightway.com/pages/The-Basics.html#string-types) - the difference between double and single quotes
