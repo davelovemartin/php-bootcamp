@@ -46,9 +46,13 @@ Here are the instructions to follow for week two:
 9. We can use our PHP script to connect to the database, and loop through the data in the table but first we need to set up a database user:
 
   a.  Go to *Database: my_database* (in the breadcrumbs) and click on the *Privileges* tab;
+
   b.	Under *New*, click on *Add user account*;
+
   c.	Change *username* to: `my_name`, *hostname* to: `localhost`, and add some passwords;
+
   d.	Under *Global privileges* check `Check all`;
+  
   e.	And click the *Go* button to add your user.
 
 10. We can use these credentials to connect our script to the database.  In your index.php file add the following to the top of your script (above the variables):
