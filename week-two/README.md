@@ -9,10 +9,12 @@ Here are the instructions to follow for week two:
 3. We’re going to create a database by clicking on the *Databases* tab.
 4.	Underneath *Create Database* in *Database name* type `myDatabase`, (leave collation) and click on the *Create* button.
 5.	Next, we’re going to create a table to go into our database:
+
   a.	If you’re not already on the *Structure* tab, click on it!
   b.	Underneath *Create Table* type `myTable` into *name*,
   c.	Type `3` in the number of columns, and
   d.	Click on *Go* to create the table.
+
 6. The next screen enables us to define the names of our table columns and the data types we can keep in the table.  Let’s give our columns the following *names*:
   `title`, `description`, `filename` set the *(data-)types* to `VARCHAR` and the *lengths* to `255`. Click on the *Preview SQL* button and you can see the SQL code that will be run to generate a table based on the information you’ve just entered.  Close the preview and click on the *Save* button to run the SQL.
 ![picture of PhpMyAdmin table structure](./Picture1.png)
@@ -23,9 +25,11 @@ Here are the instructions to follow for week two:
 
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('First title','This is a description of the first image','01.jpg');
 
-Notice how the quote marks used here are actually *grave accents* (AKA *backticks*).
+  Notice how the quote marks used here are actually *grave accents* (AKA *backticks*).
+
   d. Click on the *Go* button.
 8. If you click on the Browse tab, you can see the contents of your one row table. Let’s go back to the SQL tab and add some more data…
+
   a. we can re-create the rest of the data that was in last weeks’ array of arrays:
 
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Second title', 'This is a description of the second image', '02.jpg');
@@ -35,11 +39,13 @@ Notice how the quote marks used here are actually *grave accents* (AKA *backtick
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Sixth title', 'This is a description of the sixth image', '06.jpg');
 
 9. We can use our PHP script to connect to the database, and loop through the data in the table but first we need to set up a database user:
+
   a.  Go to *Database: myDatabase* (in the breadcrumbs) and click on the *Privileges* tab;
   b.	Under *New*, click on *Add user account*;
   c.	Change *username* to: `myName`, *hostname* to: `localhost`, and add some passwords;
   d.	Under *Global privileges* check `Check all`;
   e.	And click the *Go* button to add your user.
+
 10. We can use these credentials to connect our script to the database.  In your index.php file add the following to the top of your script (above the variables):
 
         $db = new mysqli('localhost', 'myName', 'myPassword', 'myDatabase');
@@ -68,6 +74,7 @@ Notice how the quote marks used here are actually *grave accents* (AKA *backtick
         }
 
 13. We now have a variable `$result` that contains a *mysqli_result object*, we can now loop through the result:
+
   a.	Delete the `$myArray` variable and the array of arrays we created last week
   b.	Replace:
 
