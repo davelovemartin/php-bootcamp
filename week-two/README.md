@@ -78,7 +78,7 @@ Here are the instructions to follow for week two:
           die('There was an error running the query [' . $db->error . ']');
         }
 
-13. We now have a variable `$result` that contains a *mysqli_result object*, we can now loop through the result:
+13. We now have a variable `$result` that contains a *mysqli_result* object, we can now loop through the result:
 
   a.	Delete the `$myArray` variable and the array of arrays we created last week,
 
@@ -111,11 +111,25 @@ Here are the instructions to follow for week two:
 Your challenge is to create a new php file that can edit the database from the browser.
 Hints:
 * Create a new file and give it a new name – I suggest `edit.php`.
-* Create a link to your new page [html links](https://www.w3schools.com/html/html_links.asp)!?
-* Create a HTML table that has 4 columns, a row of table headings (“&nbsp;”,“title”, “description”, and “filename”) and a row in the table body.
-[html tables](http://www.w3schools.com/html/html_tables.asp)
-*	Adapt the table from static HTML (there's an example in the template if you want to use it)
-* Here's a tutorial that can help: [update values of an entire table](https://css-tricks.com/snippets/php/update-values-of-entire-table)
+* Create a link from `index.php` to your new page [html links](https://www.w3schools.com/html/html_links.asp) and check that it works!
+* Create a HTML table (there's an example in the template if you want to use it) that has 4 columns, a row of table headings (“&nbsp;”,“title”, “description”, and “filename”) and a row in the table body [html tables](http://www.w3schools.com/html/html_tables.asp).
+* We'll need to add a new column to the database table - `id` (set to `integer`) it might be easier to drop the table and insert new data.
+* Use php to echo out the values in the database like we did in `index.php`.
+* Wrap the table in a form element:
+
+        <form name="form1" method="post" action="">
+          <table>
+          ...
+          </table>
+          <input type="submit" name="submit" class="button big" value="Save">
+        </form>
+
+and make each cell an input.  For example...
+
+        <td><input name="title[]" type="text" id="title" value="' . $row['title'] . '"></td>
+
+* `$_POST` is an array of variables passed to the current script via the HTTP POST method - [Php Forms](https://www.w3schools.com/PhP/php_forms.asp) you can use these to update the database with the data in the form by using an update query: [php mysql update](https://www.w3schools.com/php/php_mysql_update.asp) but you'll need to loop through the data collected in order to achieve this - you can add this code directly after the table. Use an if statement to call this code `if($_POST["submit"]){...}`
+
 
 ## Next week:
 We will create a *D3* infographic on our page that gets its data from its own *database table*.
@@ -123,3 +137,6 @@ We will create a *D3* infographic on our page that gets its data from its own *d
 ## Further reading:
 * [MySQL Data Types](https://dev.mysql.com/doc/refman/5.6/en/data-types.html) - what all the different *data-types* are.
 * [Grave Accents](https://stackoverflow.com/questions/7857278/what-is-the-meaning-of-grave-accent-aka-backtick-quoted-characters-in-mysql) - why we use the grave accent to escape characters in MySQL.
+* [Introducing PHP Classes](http://codular.com/introducing-php-classes) - Working with classes in PHP is a great way to streamline your code... object oriented (OO) programming made easy.
+* [MySQLi for beginners](http://codular.com/php-mysqli) - tutorial covering the basics
+* [PHP symbols](https://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php) - what do those funny characters mean? PHP Syntax explained.

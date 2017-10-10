@@ -64,14 +64,16 @@ SQL;
 						<h2>Recent Work</h2>
 						<div class="row">
 							<?php
-							for ($i = 0; $i < count($myArray); $i++ ) {
-									$fileNumber = $i + 1;
-									echo "<article class='6u 12u$(xsmall) work-item'>";
-									echo "	<a href='images/fulls/0". $fileNumber .".jpg' class='image fit thumb'><img src='images/thumbs/0". $fileNumber .".jpg' alt='' /></a>";
-									echo "	<h3>" . $myArray[$i][title] . "</h3>";
-									echo "	<p>" . $myArray[$i][description] . "</p>";
-									echo "</article>";
-								}
+              # loop through all the rows in the table
+    while($row = $result->fetch_assoc()){
+      echo "<article class='6u 12u$(xsmall) work-item'>";
+      echo "	<a href='images/fulls/". $row['filename'] ."' class='image fit thumb'><img src='images/thumbs/". $row['filename'] ."' alt='' /></a>";
+      echo "	<h3>" . $row['title'] . "</h3>";
+      echo "	<p>" . $row['description'] . "</p>";
+      echo "</article>";
+    }
+    # free up system resources
+    $result->free();
 			        ?>
 						</div>
 						<ul class="actions">
