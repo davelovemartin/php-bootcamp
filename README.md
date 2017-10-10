@@ -18,7 +18,7 @@ We introduce some basic patterns needed for your assignments - Working with Data
 * Use PhpMyAdmin to run some MySQL,
 * Recreate a database table (using Select, Order by and Where SQL Statements and the PHP while loop).
 
-## Week Three - A SQL query goes into a bar, walks up to two tables and asks, "Can I join you?"
+## Week Three - A SQL query goes into a bar, walks up to two tables and asks, "Can I join you?" [Week Three Files](/week-three/)
 We address more concepts needed for upcoming assignments - Working with More Data
 
 * Perform CRUD operations on the database table from the Browser,

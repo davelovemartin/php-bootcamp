@@ -7,12 +7,12 @@ Here are the instructions to follow for week two:
 1. Open *MAMP* and start your servers.
 2. From the MAMP Start Page http://localhost:8888/MAMP/ click on the *phpMyAdmin link*. phpMyAdmin lets us create and SQL code by using a GUI.
 3. We’re going to create a database by clicking on the *Databases* tab.
-4.	Underneath *Create Database* in *Database name* type `my_database`, (leave collation) and click on the *Create* button.
+4.	Underneath *Create Database* in *Database name* type `myDatabase`, (leave collation) and click on the *Create* button.
 5.	Next, we’re going to create a table to go into our database:
 
   a.	If you’re not already on the *Structure* tab, click on it!
 
-  b.	Underneath *Create Table* type `my_table` into *name*,
+  b.	Underneath *Create Table* type `myTable` into *name*,
 
   c.	Type `3` in the number of columns, and
 
@@ -29,7 +29,7 @@ Here are the instructions to follow for week two:
 
   c. Type in the following:
 
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('First title','This is a description of the first image','01.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('First title','This is a description of the first image','01.jpg');
 
   Notice how the quote marks used here are actually *grave accents* (AKA *backticks*).
 
@@ -37,23 +37,23 @@ Here are the instructions to follow for week two:
 
 8. If you click on the Browse tab, you can see the contents of your one row table. Let’s go back to the SQL tab and re-create the rest of the data that was in last weeks’ array of arrays:
 
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Second title', 'This is a description of the second image', '02.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Third title', 'This is a description of the third image', '03.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Fourth title', 'This is a description of the fourth image', '04.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Fifth title', 'This is a description of the fifth image', '05.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Sixth title', 'This is a description of the sixth image', '06.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Second title', 'This is a description of the second image', '02.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Third title', 'This is a description of the third image', '03.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Fourth title', 'This is a description of the fourth image', '04.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Fifth title', 'This is a description of the fifth image', '05.jpg');
+        INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Sixth title', 'This is a description of the sixth image', '06.jpg');
 
 9. We can use our PHP script to connect to the database, and loop through the data in the table but first we need to set up a database user:
 
-  a.  Go to *Database: my_database* (in the breadcrumbs) and click on the *Privileges* tab;
+  a.  Go to *Database: myDatabase* (in the breadcrumbs) and click on the *Privileges* tab;
   b.	Under *New*, click on *Add user account*;
-  c.	Change *username* to: `my_name`, *hostname* to: `localhost`, and add some passwords;
+  c.	Change *username* to: `myName`, *hostname* to: `localhost`, and add some passwords;
   d.	Under *Global privileges* check `Check all`;
   e.	And click the *Go* button to add your user.
 
 10. We can use these credentials to connect our script to the database.  In your index.php file add the following to the top of your script (above the variables):
 
-        $db = new mysqli('localhost', 'my_name', 'myPassword', 'my_database');
+        $db = new mysqli('localhost', 'myName', 'myPassword', 'myDatabase');
         # check our connection to the database and return error if broken
         if($db->connect_errno > 0){
           die('Unable to connect to database [' . $db->connect_error . ']');
@@ -67,10 +67,10 @@ Here are the instructions to follow for week two:
 
 12. Let’s go ahead and pull out all the rows of data in our table:
 
-        # select all rows from the table my_table
+        # select all rows from the table myTable
         $sql = <<<SQL
         SELECT *
-        FROM `my_table`
+        FROM `myTable`
         SQL;
 
         # check our query will actually run
