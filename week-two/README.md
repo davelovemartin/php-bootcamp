@@ -107,13 +107,18 @@ Here are the instructions to follow for week two:
         $result->free();
 
 
-## Ideas for expansion
-* Show your profile image with your [Gravatar.com avatar](https://en.gravatar.com/site/implement/images/php/).
-* Get the form to work [PHP Forms Tutorial](https://www.lynda.com/PHP-tutorials/Build-forms/587674/623963-4.html)!?
-* Edit the CSS and the background image with something more personal?
+## Challenge
+Your challenge is to create a new php file that can edit the database from the browser.
+Hints:
+* Create a new file and give it a new name – I suggest `edit.php`.
+* Create a link to your new page [html links](https://www.w3schools.com/html/html_links.asp)!?
+* Create a HTML table that has 4 columns, a row of table headings (“&nbsp;”,“title”, “description”, and “filename”) and a row in the table body.
+[html tables](http://www.w3schools.com/html/html_tables.asp)
+*	Adapt the table from static HTML (there's an example in the template if you want to use it)
+* Here's a tutorial that can help: [update values of an entire table](https://css-tricks.com/snippets/php/update-values-of-entire-table)
 
 ## Next week:
-We will replace our *two-dimensional array* with a *database table*.
+We will create a *D3* infographic on our page that gets its data from its own *database table*.
 
 ## Further reading:
 * [MySQL Data Types](https://dev.mysql.com/doc/refman/5.6/en/data-types.html) - what all the different *data-types* are.
