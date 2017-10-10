@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-  $db = new mysqli('localhost', 'my_name', 'changeme', 'my_database');
+  $db = new mysqli('localhost', 'my_username', 'changeme', 'my_database');
   # check our connection to the database and return error if broken
   if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
@@ -16,7 +16,7 @@ SQL;
     die('There was an error running the query [' . $db->error . ']');
   }
 	// declare your variables
-  $myName = "Dave Martin";
+  $my_name = "Dave Martin";
   $myJobTitle = "UWE Alumni and Indie Web Developer";
 	$email = "justanotherdavemartin@gmail.com";
 	$size = 100;
@@ -27,7 +27,7 @@ SQL;
 ?>
 <html>
 	<head>
-		<title><?php echo $myName . "'s website"; ?></title>
+		<title><?php echo $my_name . "'s website"; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -65,15 +65,15 @@ SQL;
 						<div class="row">
 							<?php
               # loop through all the rows in the table
-    while($row = $result->fetch_assoc()){
-      echo "<article class='6u 12u$(xsmall) work-item'>";
-      echo "	<a href='images/fulls/". $row['filename'] ."' class='image fit thumb'><img src='images/thumbs/". $row['filename'] ."' alt='' /></a>";
-      echo "	<h3>" . $row['title'] . "</h3>";
-      echo "	<p>" . $row['description'] . "</p>";
-      echo "</article>";
-    }
-    # free up system resources
-    $result->free();
+              while($row = $result->fetch_assoc()){
+                echo "<article class='6u 12u$(xsmall) work-item'>";
+                echo "	<a href='images/fulls/". $row['filename'] ."' class='image fit thumb'><img src='images/thumbs/". $row['filename'] ."' alt='' /></a>";
+                echo "	<h3>" . $row['title'] . "</h3>";
+                echo "	<p>" . $row['description'] . "</p>";
+                echo "</article>";
+              }
+              # free up system resources
+              $result->free();
 			        ?>
 						</div>
 						<ul class="actions">
