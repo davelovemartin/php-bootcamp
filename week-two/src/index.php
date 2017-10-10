@@ -16,7 +16,7 @@ SQL;
     die('There was an error running the query [' . $db->error . ']');
   }
 	// declare your variables
-  $my_name = "Dave Martin";
+  $myName = "Dave Martin";
   $myJobTitle = "UWE Alumni and Indie Web Developer";
 	$email = "justanotherdavemartin@gmail.com";
 	$size = 100;
@@ -27,7 +27,7 @@ SQL;
 ?>
 <html>
 	<head>
-		<title><?php echo $my_name . "'s website"; ?></title>
+		<title><?php echo $myName . "'s website"; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -40,7 +40,7 @@ SQL;
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="<?php echo $grav_url; ?>" alt="" /></a>
-					<h1><strong><?php echo $my_name; ?></strong><br /><?php echo $myJobTitle; ?></h1>
+					<h1><strong><?php echo $myName; ?></strong><br /><?php echo $myJobTitle; ?></h1>
 				</div>
 			</header>
 
