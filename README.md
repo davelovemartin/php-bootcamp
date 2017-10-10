@@ -4,14 +4,14 @@ Welcome to the PHP Bootcamp.  We're going to introduce you to some basic concept
 
 Get Started here 👉🏼 [Week One - Is there an echo in here?](/week-one/)
 
-## Week One - Is there an echo in here?
+## Week One - Is there an echo in here? [Week One Files](/week-one/)
 From HTML to PHP. We show how easy it is to transform an HTML page into a PHP script.
 
 * Set up development environment on your laptop,
 * Add PHP tags to an HTML template to create Dynamic Pages,
 * Using PHP to keep our code DRY.
 
-## Week Two - while(!asleep()) sheep++;
+## Week Two - while(!asleep()) sheep++; [Week Two Files](/week-two/)
 We introduce some basic patterns needed for your assignments - Working with Data
 
 * Connect to a one table database,
