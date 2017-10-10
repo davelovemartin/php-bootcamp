@@ -11,16 +11,22 @@ Here are the instructions to follow for week two:
 5.	Next, we’re going to create a table to go into our database:
 
   a.	If you’re not already on the *Structure* tab, click on it!
+
   b.	Underneath *Create Table* type `myTable` into *name*,
+
   c.	Type `3` in the number of columns, and
+
   d.	Click on *Go* to create the table.
 
 6. The next screen enables us to define the names of our table columns and the data types we can keep in the table.  Let’s give our columns the following *names*:
   `title`, `description`, `filename` set the *(data-)types* to `VARCHAR` and the *lengths* to `255`. Click on the *Preview SQL* button and you can see the SQL code that will be run to generate a table based on the information you’ve just entered.  Close the preview and click on the *Save* button to run the SQL.
 ![picture of PhpMyAdmin table structure](./Picture1.png)
 7. We’re going to add some data to the table using SQL:
+
   a. Click on the *SQL* tab,
+
   b. Click on the *INSERT* button,
+
   c. Type in the following:
 
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('First title','This is a description of the first image','01.jpg');
@@ -28,9 +34,8 @@ Here are the instructions to follow for week two:
   Notice how the quote marks used here are actually *grave accents* (AKA *backticks*).
 
   d. Click on the *Go* button.
-8. If you click on the Browse tab, you can see the contents of your one row table. Let’s go back to the SQL tab and add some more data…
 
-  a. we can re-create the rest of the data that was in last weeks’ array of arrays:
+8. If you click on the Browse tab, you can see the contents of your one row table. Let’s go back to the SQL tab and re-create the rest of the data that was in last weeks’ array of arrays:
 
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Second title', 'This is a description of the second image', '02.jpg');
         INSERT INTO `myTable` (`title`, `description`, `filename`) VALUES ('Third title', 'This is a description of the third image', '03.jpg');
@@ -75,7 +80,8 @@ Here are the instructions to follow for week two:
 
 13. We now have a variable `$result` that contains a *mysqli_result object*, we can now loop through the result:
 
-  a.	Delete the `$myArray` variable and the array of arrays we created last week
+  a.	Delete the `$myArray` variable and the array of arrays we created last week,
+
   b.	Replace:
 
         for ($i = 0; $i < count($myArray); $i++ ) {
@@ -87,7 +93,7 @@ Here are the instructions to follow for week two:
           echo "</article>";
         }
 
-  With:
+    With:
 
         # loop through all the rows in the table
         while($row = $result->fetch_assoc()){
