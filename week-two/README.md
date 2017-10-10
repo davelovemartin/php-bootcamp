@@ -15,7 +15,7 @@ Here are the instructions to follow for week two:
   d.	Click on *Go* to create the table.
 6. The next screen enables us to define the names of our table columns and the data types we can keep in the table.  Let’s give our columns the following *names*:
   `title`, `description`, `filename` set the *(data-)types* to `VARCHAR` and the *lengths* to `255`. Click on the *Preview SQL* button and you can see the SQL code that will be run to generate a table based on the information you’ve just entered.  Close the preview and click on the *Save* button to run the SQL.
-![picture of PhpMyAdmin table structure](/Picture1.png)
+![picture of PhpMyAdmin table structure](./Picture1.png)
 7. We’re going to add some data to the table using SQL:
   a. Click on the *SQL* tab,
   b. Click on the *INSERT* button,
