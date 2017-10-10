@@ -1,5 +1,20 @@
 <!DOCTYPE HTML>
 <?php
+  $db = new mysqli('localhost', 'myName', 'changeme', 'newDatabase');
+  # check our connection to the database and return error if broken
+  if($db->connect_errno > 0){
+    die('Unable to connect to database [' . $db->connect_error . ']');
+  }
+  # select all rows from the table myTable
+  $sql = <<<SQL
+SELECT *
+FROM `myTable`
+SQL;
+
+  # check our query will actually run
+  if(!$result = $db->query($sql)){
+    die('There was an error running the query [' . $db->error . ']');
+  }
 	// declare your variables
   $myName = "Dave Martin";
   $myJobTitle = "UWE Alumni and Indie Web Developer";
@@ -8,14 +23,7 @@
 	$grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "&s=" . $size;
 	$date = Date(Y);
 	// $myArray = [title => "First title", description => "This is a description of the first image"];
-	$myArray = [
-      [title => "First title", description => "This is a description of the first image"],
-      [title => "Second title", description => "This is a description of the second image"],
-      [title => "Third title", description => "This is a description of the third image"],
-      [title => "Fourth title", description => "This is a description of the fourth image"],
-      [title => "Fifth title", description => "This is a description of the fifth image"],
-      [title => "Sixth title", description => "This is a description of the sixth image"]
-    ];
+
 ?>
 <html>
 	<head>
@@ -457,3 +465,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+<?php
+  # close the connection to your database
+  $db->close();
+?>
