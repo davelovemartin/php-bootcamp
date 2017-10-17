@@ -29,7 +29,8 @@ Here are the instructions to follow for week two:
 
   c. Type in the following:
 
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('First title','This is a description of the first image','01.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (0,'First title','This is a description of the first image','01.jpg');
+
 
   Notice how the quote marks used here are actually *grave accents* (AKA *backticks*).
 
@@ -37,11 +38,11 @@ Here are the instructions to follow for week two:
 
 8. If you click on the Browse tab, you can see the contents of your one row table. Let’s go back to the SQL tab and re-create the rest of the data that was in last weeks’ array of arrays:
 
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Second title', 'This is a description of the second image', '02.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Third title', 'This is a description of the third image', '03.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Fourth title', 'This is a description of the fourth image', '04.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Fifth title', 'This is a description of the fifth image', '05.jpg');
-        INSERT INTO `my_table` (`title`, `description`, `filename`) VALUES ('Sixth title', 'This is a description of the sixth image', '06.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (1, 'Second         title', 'This is a description of the second image', '02.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (2, 'Third         title', 'This is a description of the third image', '03.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (3, 'Fourth         title', 'This is a description of the fourth image', '04.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (4, 'Fifth         title', 'This is a description of the fifth image', '05.jpg');
+        INSERT INTO `my_table` (`id`,`title`, `description`, `filename`) VALUES (5, 'Sixth title', 'This is a description of the sixth image', '06.jpg');
 
 9. We can use our PHP script to connect to the database, and loop through the data in the table but first we need to set up a database user:
 
@@ -52,7 +53,7 @@ Here are the instructions to follow for week two:
   c.	Change *username* to: `my_name`, *hostname* to: `localhost`, and add some passwords;
 
   d.	Under *Global privileges* check `Check all`;
-  
+
   e.	And click the *Go* button to add your user.
 
 10. We can use these credentials to connect our script to the database.  In your index.php file add the following to the top of your script (above the variables):
